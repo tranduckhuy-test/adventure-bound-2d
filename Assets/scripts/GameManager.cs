@@ -236,6 +236,10 @@ public class GameManager : MonoBehaviour
         LevelManager.instance.current_role = role;
         isGameStart = true;
 
+        if (IsRespawn)
+        {
+            levelNum = LevelManager.instance.current_Level;
+        }
 
         if (levelNum != 0)
         {
@@ -257,5 +261,10 @@ public class GameManager : MonoBehaviour
     public void PlayerDied()
     {
         uiMgr.ShowDeadMenu();
+    }
+
+    public void PlayerWin()
+    {
+        uiMgr.ShowWinMenu();
     }
 }

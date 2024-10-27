@@ -54,6 +54,7 @@ MonoBehaviour:
   clickSound: {fileID: 8300000, guid: c4d596df3d6d04ec3a566463ffe8e162, type: 3}
   doorAppearSound: {fileID: 8300000, guid: d71c27aba2ff5e842857006fae386a4d, type: 3}
   stairsDown: {fileID: 8300000, guid: 310c9796626cb4b5abbd00becd919af6, type: 3}
+  winGame: {fileID: 8300000, guid: 7aa541f0fe8ffcc4b8f0cd2c6510a934, type: 3}
 --- !u!82 &4306909068754972134
 AudioSource:
   m_ObjectHideFlags: 0

@@ -7,6 +7,8 @@ public class UIManager : MonoBehaviour
 	[SerializeField] GameObject roleMenu;
 	[SerializeField] GameObject menuButton;
 	[SerializeField] GameObject deadMenu;
+	[SerializeField] GameObject winMenu;
+	[SerializeField] GameObject healthHeart;
 
 
 	bool isGamePause = false;
@@ -106,6 +108,16 @@ public class UIManager : MonoBehaviour
     {
         deadMenu.SetActive(true);
         stopMenu.SetActive(false);
+        Time.timeScale = 0;
+    }
+
+	public void ShowWinMenu()
+    {
+        SFXManager.instance.WinGame();
+        deadMenu.SetActive(false);
+        stopMenu.SetActive(false);
+        healthHeart.SetActive(false);
+        winMenu.SetActive(true);
         Time.timeScale = 0;
     }
 }

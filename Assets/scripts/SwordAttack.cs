@@ -34,8 +34,8 @@ public class SwordAttack : MonoBehaviour
         rightAttackOffset = horiOffset;
         upAttackOffset = verOffset;
 
-        horiColSize = new Vector3(0.2f, 0.25f);
-        verColSize = new Vector3(0.25f, 0.2f);
+        horiColSize = new Vector3(0.2f, 0.23f);
+        verColSize = new Vector3(0.23f, 0.15f);
 
         SwordCollider = GetComponent<BoxCollider2D>();
     }

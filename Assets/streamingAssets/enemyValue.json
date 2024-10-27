@@ -71,6 +71,19 @@
             "detectionZone": 1,
             "speed": 0.9,
             "bodyRemainTime": 2
+        },
+	{
+            "id": 7,
+            "name": "Buffalo",
+            "hp": 20,
+            "damage": 1,
+            "knockback": 100,
+            "knockbackCooldown": 0.5,
+            "attackRange": 0.4,
+            "detectionZone": 0.8,
+            "speed": 0.5,
+            "bodyRemainTime": 3
         }
+
     ]
 }
