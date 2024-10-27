@@ -32,7 +32,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5061396879510839938
 SpriteRenderer:
@@ -146,7 +146,7 @@ MonoBehaviour:
   damageIncreaseValue: 2
   healthRecoverValue: 4
   speedIncreaseValue: 0.5
-  effectTime: 15
+  effectTime: 8
   sprite: {fileID: 5061396879510839938}
   col: {fileID: 95119013476787002}
   itemType: 0
