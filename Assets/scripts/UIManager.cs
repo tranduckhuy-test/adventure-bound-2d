@@ -10,6 +10,7 @@ public class UIManager : MonoBehaviour
 	[SerializeField] GameObject winMenu;
 	[SerializeField] GameObject healthHeart;
 	[SerializeField] GameObject findStairsObj;
+	[SerializeField] GameObject screenMenu;
 
 
 	bool isGamePause = false;
@@ -53,6 +54,18 @@ public class UIManager : MonoBehaviour
 	{
 		stopMenu.SetActive(false);
 	}
+	
+	public void OpenScreenMenu()
+	{
+		screenMenu.SetActive(true);
+		menuButton.SetActive(false);
+	}
+
+	public void CloseScreenMenu()
+	{
+        screenMenu.SetActive(false);
+        menuButton.SetActive(true);
+    }
 
 	public void UnhideDoor()
 	{
