@@ -55,17 +55,17 @@ public class UIManager : MonoBehaviour
 		stopMenu.SetActive(false);
 	}
 	
-	public void OpenScreenMenu()
-	{
-		screenMenu.SetActive(true);
-		menuButton.SetActive(false);
-	}
+	//public void OpenScreenMenu()
+	//{
+	//	screenMenu.SetActive(true);
+	//	menuButton.SetActive(false);
+	//}
 
-	public void CloseScreenMenu()
-	{
-        screenMenu.SetActive(false);
-        menuButton.SetActive(true);
-    }
+	//public void CloseScreenMenu()
+	//{
+ //       screenMenu.SetActive(false);
+ //       menuButton.SetActive(true);
+ //   }
 
 	public void UnhideDoor()
 	{
