@@ -7,7 +7,7 @@ public class SFXManager : MonoBehaviour
 	public static SFXManager instance;
 
 	public AudioSource src;
-	public AudioClip slashSound, hitSound, deathSound, playerDeathSound, playerHitSound, clickSound, doorAppearSound, stairsDown, winGame;
+	public AudioClip slashSound, hitSound, deathSound, playerDeathSound, playerHitSound, clickSound, doorAppearSound, stairsDown, winGame, goblinDie, buffaloDie;
 
 
 	private void Awake()
@@ -69,6 +69,16 @@ public class SFXManager : MonoBehaviour
     public void WinGame()
     {
         src.PlayOneShot(winGame);
+    }
+
+	public void GoblinDeath()
+    {
+        src.PlayOneShot(goblinDie);
+    }
+
+	public void BuffaloDeath()
+    {
+        src.PlayOneShot(buffaloDie);
     }
 
 }

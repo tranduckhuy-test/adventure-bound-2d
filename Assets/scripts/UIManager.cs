@@ -9,6 +9,7 @@ public class UIManager : MonoBehaviour
 	[SerializeField] GameObject deadMenu;
 	[SerializeField] GameObject winMenu;
 	[SerializeField] GameObject healthHeart;
+	[SerializeField] GameObject findStairsObj;
 
 
 	bool isGamePause = false;
@@ -116,6 +117,7 @@ public class UIManager : MonoBehaviour
         SFXManager.instance.WinGame();
         deadMenu.SetActive(false);
         stopMenu.SetActive(false);
+        findStairsObj.SetActive(false);
         healthHeart.SetActive(false);
         winMenu.SetActive(true);
         Time.timeScale = 0;

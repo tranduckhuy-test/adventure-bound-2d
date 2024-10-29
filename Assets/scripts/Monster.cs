@@ -43,6 +43,7 @@ public class Monster : MonoBehaviour
     float knockbackCooldown;
     float health;
     float attackRange;
+    string monsterName;
 
     public float Damage { get { return damage; } protected set { damage = value; } }
     public float AttackRange { get { return attackRange; } }
@@ -52,6 +53,11 @@ public class Monster : MonoBehaviour
     [SerializeField] BoxCollider2D attackBox;
 
     [SerializeField] bool isBoss;
+    public static bool isBossDefeated = false;
+
+    // Event to update level progress
+    public delegate void LevelProgressUpdate();
+    public static event LevelProgressUpdate OnLevelProgressUpdate;
 
     private void Awake()
     {
@@ -69,6 +75,7 @@ public class Monster : MonoBehaviour
         detectRange = monster.detectionZone;
         detectionZone.MoveSpeed = monster.speed;
         bodyRemainTime = monster.bodyRemainTime;
+        monsterName = monster.name;
     }
 
 
@@ -91,11 +98,21 @@ public class Monster : MonoBehaviour
         physicsCollider.enabled = false;
         rb.simulated = false;
         detectionZone.canApproach = false;
+        OnLevelProgressUpdate();
 
         if (isBoss)
         {
-            GameManager gameManager = GameObject.FindObjectOfType<GameManager>();
-            gameManager.LevelFinished();
+            isBossDefeated = true;
+            //GameManager gameManager = GameObject.FindObjectOfType<GameManager>();
+            //gameManager.LevelFinished();
+            if (monsterName.Equals("Goblin"))
+            {
+                SFXManager.instance.GoblinDeath();
+            } else if (monsterName.Equals("Buffalo"))
+            {
+
+               SFXManager.instance.BuffaloDeath();
+            }
         }
 
         CancelInvoke("ReApproach");
