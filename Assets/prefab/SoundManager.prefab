@@ -55,6 +55,8 @@ MonoBehaviour:
   doorAppearSound: {fileID: 8300000, guid: d71c27aba2ff5e842857006fae386a4d, type: 3}
   stairsDown: {fileID: 8300000, guid: 310c9796626cb4b5abbd00becd919af6, type: 3}
   winGame: {fileID: 8300000, guid: 7aa541f0fe8ffcc4b8f0cd2c6510a934, type: 3}
+  goblinDie: {fileID: 8300000, guid: ec03d67216927274985a88b9821c05b3, type: 3}
+  buffaloDie: {fileID: 8300000, guid: aaad7c57664d7d948b9e5ab3ce03039c, type: 3}
 --- !u!82 &4306909068754972134
 AudioSource:
   m_ObjectHideFlags: 0
