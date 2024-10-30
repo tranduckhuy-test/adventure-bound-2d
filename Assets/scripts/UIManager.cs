@@ -13,13 +13,13 @@ public class UIManager : MonoBehaviour
 	[SerializeField] GameObject screenMenu;
 
 
-	bool isGamePause = false;
+    bool isGamePause = false;
 	public bool IsGamePause
 	{
 		get { return isGamePause; }
 	}
 
-	private void Update()
+    private void Update()
 	{
 		if (GameManager.instance.IsGameStart && Input.GetKeyDown(KeyCode.Escape))
 		{
