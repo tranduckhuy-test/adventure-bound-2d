@@ -233,14 +233,15 @@ public class GameManager : MonoBehaviour
         var data = ReadJson.Instance.GetSavedData();
         int levelNum = data.Item1;
         string role = data.Item2;
-        LevelManager.instance.current_role = role;
         isGameStart = true;
 
         if (IsRespawn)
         {
             levelNum = LevelManager.instance.current_Level;
+            role = LevelManager.instance.current_role;
         }
 
+        LevelManager.instance.current_role = role;
         if (levelNum != 0)
         {
             StartCoroutine(LoadLevelAsset("Level_0" + levelNum));

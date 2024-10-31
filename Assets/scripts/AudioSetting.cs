@@ -37,8 +37,17 @@ public class AudioSetting : MonoBehaviour
 
     public void ApplyVolumeSettings()
     {
-        musicSource.volume = PlayerPrefs.GetFloat("musicVolume", 1f);
-        sfxSource.volume = PlayerPrefs.GetFloat("sfxVolume", 1f);
+        if (musicSource != null)
+        {
+            musicSource.volume = PlayerPrefs.GetFloat("musicVolume", 1f);
+        }
+
+        if (sfxSource != null)
+        {
+            sfxSource.volume = PlayerPrefs.GetFloat("sfxVolume", 1f);
+        }
+        //musicSource.volume = PlayerPrefs.GetFloat("musicVolume", 1f);
+        //sfxSource.volume = PlayerPrefs.GetFloat("sfxVolume", 1f);
     }
 
     public void SaveVolumeSettings()

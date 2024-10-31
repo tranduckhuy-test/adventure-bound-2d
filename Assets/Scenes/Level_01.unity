@@ -17979,7 +17979,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6623532270868215073, guid: b563a183a850f49ca821a332853c45d4, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9084703833061955395, guid: b563a183a850f49ca821a332853c45d4, type: 3}
       propertyPath: m_RootOrder
@@ -30604,7 +30604,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3728686885637878829, guid: fa5069c39d8ec43058f8ca2550efd767, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6643443840217463181, guid: fa5069c39d8ec43058f8ca2550efd767, type: 3}
       propertyPath: m_IsActive
@@ -30843,11 +30843,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7974152729824505680, guid: 848fbeb1a55314654b0ce85ff7ae9104, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.093
+      value: 6.873
       objectReference: {fileID: 0}
     - target: {fileID: 7974152729824505680, guid: 848fbeb1a55314654b0ce85ff7ae9104, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.658
+      value: 3.617
       objectReference: {fileID: 0}
     - target: {fileID: 7974152729824505680, guid: 848fbeb1a55314654b0ce85ff7ae9104, type: 3}
       propertyPath: m_LocalPosition.z
@@ -55257,6 +55257,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FindStairsText
       objectReference: {fileID: 0}
+    - target: {fileID: 1515377096258465655, guid: 62daf1a0d0ee7ba429a1be4138e5ccc0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2662142943099952200, guid: 62daf1a0d0ee7ba429a1be4138e5ccc0, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -55491,6 +55495,10 @@ PrefabInstance:
     - target: {fileID: 3606014982365924587, guid: b9b96aaf49202bb42a6c5478b229a805, type: 3}
       propertyPath: m_Name
       value: Kill
+      objectReference: {fileID: 0}
+    - target: {fileID: 3606014982365924587, guid: b9b96aaf49202bb42a6c5478b229a805, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5745308425046307754, guid: b9b96aaf49202bb42a6c5478b229a805, type: 3}
       propertyPath: m_Pivot.x
