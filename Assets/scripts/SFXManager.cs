@@ -1,84 +1,78 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class SFXManager : MonoBehaviour
 {
-	public static SFXManager instance;
+    public static SFXManager instance;
 
-	public AudioSource src;
-	public AudioClip slashSound, hitSound, deathSound, playerDeathSound, playerHitSound, clickSound, doorAppearSound, stairsDown, winGame, goblinDie, buffaloDie;
+    public AudioSource musicSource, sfxSource;
+    public AudioClip background;
+    public AudioClip slashSound, hitSound, deathSound, playerDeathSound, playerHitSound, clickSound, doorAppearSound, stairsDown, winGame, goblinDie, buffaloDie;
 
-
-	private void Awake()
-	{
-		if (instance == null)
-		{
-			instance = this;
-		}
-		else
-		{
-			Destroy(gameObject);
-		}
-	}
-
-	public void SlashSound()
-	{
-		if (GameManager.instance.GetGamePauseStatus() == false)
-		{
-			src.PlayOneShot(slashSound);
-
-		}
-	}
-
-	public void HitSound()
-	{
-		src.PlayOneShot(hitSound);
-	}
-
-	public void DeathSound()
-	{
-		src.PlayOneShot(deathSound);
-	}
-
-	public void PlayerDeath()
-	{
-		src.PlayOneShot(playerDeathSound);
-	}
-
-	public void PlayerHit()
-	{
-		src.PlayOneShot(playerHitSound);
-	}
-
-	public void DoorAppear()
-	{
-		src.PlayOneShot(doorAppearSound);
-	}
-
-	public void ClickSound()
-	{
-		src.PlayOneShot(clickSound);
-	}
-
-	public void StairsDown()
-	{
-		src.PlayOneShot(stairsDown);
-	}
-
-    public void WinGame()
+    private void Awake()
     {
-        src.PlayOneShot(winGame);
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
-	public void GoblinDeath()
+    private void Start()
     {
-        src.PlayOneShot(goblinDie);
+        if (PlayerPrefs.HasKey("musicVolume"))
+        {
+            musicSource.volume = PlayerPrefs.GetFloat("musicVolume");
+        }
+        else
+        {
+            musicSource.volume = 1f; 
+        }
+
+        if (PlayerPrefs.HasKey("sfxVolume"))
+        {
+            sfxSource.volume = PlayerPrefs.GetFloat("sfxVolume");
+        }
+        else
+        {
+            sfxSource.volume = 1f; 
+        }
+
+        musicSource.clip = background;
+        musicSource.Play();
     }
 
-	public void BuffaloDeath()
+    public void SlashSound()
     {
-        src.PlayOneShot(buffaloDie);
+        if (GameManager.instance.GetGamePauseStatus() == false)
+        {
+            sfxSource.PlayOneShot(slashSound);
+        }
     }
 
+    public void HitSound() => sfxSource.PlayOneShot(hitSound);
+    public void DeathSound() => sfxSource.PlayOneShot(deathSound);
+    public void PlayerDeath() => sfxSource.PlayOneShot(playerDeathSound);
+    public void PlayerHit() => sfxSource.PlayOneShot(playerHitSound);
+    public void DoorAppear() => sfxSource.PlayOneShot(doorAppearSound);
+    public void ClickSound() => sfxSource.PlayOneShot(clickSound);
+    public void StairsDown() => sfxSource.PlayOneShot(stairsDown);
+    public void WinGame() => sfxSource.PlayOneShot(winGame);
+    public void GoblinDeath() => sfxSource.PlayOneShot(goblinDie);
+    public void BuffaloDeath() => sfxSource.PlayOneShot(buffaloDie);
+
+    public void MusicVolume(float volume)
+    {
+        musicSource.volume = volume;
+        PlayerPrefs.SetFloat("musicVolume", volume);  
+    }
+
+    public void SFXVolume(float volume)
+    {
+        sfxSource.volume = volume;
+        PlayerPrefs.SetFloat("sfxVolume", volume); 
+    }
 }
